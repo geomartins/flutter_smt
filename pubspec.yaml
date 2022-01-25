@@ -37,6 +37,7 @@ dependencies:
   get:
   get_storage:
   flutter_dotenv: ^5.0.2
+  rxdart: ^0.27.3
 
 dev_dependencies:
   flutter_test:

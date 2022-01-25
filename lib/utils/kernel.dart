@@ -1,6 +1,5 @@
 import 'package:cruz/services/auth_service.dart';
 import 'package:cruz/utils/session.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Kernel{

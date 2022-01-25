@@ -1,5 +1,6 @@
 import 'package:cruz/config/constants.dart';
-import 'package:cruz/services/kernel.dart';
+import 'package:cruz/providers/register_provider.dart';
+import 'package:cruz/utils/kernel.dart';
 import 'package:cruz/config/themefy.dart';
 import 'package:cruz/routes/routefy.dart';
 import 'package:cruz/utils/translations.dart';
@@ -22,16 +23,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      //initialBinding: ,
-      title: kAppName,
-      translations: MyTranslations(),
-      locale: const Locale('en','US'),
-      theme: Themefy().xll(),
-      defaultTransition: Routefy.defaultTransition,
-      initialRoute: Routefy.initial,
-      getPages: Routefy.all(),
-      unknownRoute: Routefy.unknownRoute,
+    return RegisterProvider(
+      child: GetMaterialApp(
+        //initialBinding: ,
+        title: kAppName,
+        translations: MyTranslations(),
+        locale: const Locale('en','US'),
+        theme: Themefy().xll(),
+        defaultTransition: Routefy.defaultTransition,
+        initialRoute: Routefy.initial,
+        getPages: Routefy.all(),
+        unknownRoute: Routefy.unknownRoute,
+      ),
     );
   }
 }
