@@ -1,10 +1,12 @@
 import 'dart:developer';
 
 import 'package:cruz/controllers/login_controller.dart';
+import 'package:cruz/controllers/password_reset_controller.dart';
 import 'package:cruz/utils/session.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:provider/provider.dart';
 
 class Login extends GetView<LoginController> {
   static const String id = "/login";
@@ -22,6 +24,7 @@ class Login extends GetView<LoginController> {
       appBar: AppBar(title: Text('Login'.tr)),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
+          context.read()<PasswordResetController>().increment();
           //Get.find<Session>().write(key, value)
           print(dotenv.env['APP_NAME']);
            controller.incrementCounter();
