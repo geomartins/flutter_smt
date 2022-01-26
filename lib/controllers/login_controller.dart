@@ -1,10 +1,14 @@
+import 'package:cruz/models/dialog.dart';
+import 'package:cruz/models/profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class LoginController extends GetxController{
+class LoginController extends GetxController with StateMixin<Dialog>{
   final _email = 'marto'.obs;
   final _password = RxString('ss'); //'ss'.obs;
   final _count = 0.obs;
+
+  late Dialog dialogState;
 
 
   //RxString('Martins)
@@ -15,8 +19,20 @@ class LoginController extends GetxController{
   //Rx<User>()
 
   void onInit() {
+    dialogState = Dialog();
+    dialogState.age = 50;
+    dialogState.name = 'Martolal';
+
+
     super.onInit();
+    change(dialogState,status: RxStatus.success());
     print('this is login controller constructor');
+  }
+
+
+  void incrementAge(){
+    dialogState.age = dialogState.age+1;
+    change(dialogState,status: RxStatus.success());
   }
 
   void incrementCounter(){

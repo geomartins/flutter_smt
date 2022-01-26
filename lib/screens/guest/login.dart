@@ -24,17 +24,36 @@ class Login extends GetView<LoginController> {
       appBar: AppBar(title: Text('Login'.tr)),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          context.read()<PasswordResetController>().increment();
+          controller.incrementAge();
+          //context.read()<PasswordResetController>().increment();
           //Get.find<Session>().write(key, value)
-          print(dotenv.env['APP_NAME']);
-           controller.incrementCounter();
+          //print(dotenv.env['APP_NAME']);
+           //controller.incrementCounter();
            //GetUtils.isEmail('ade@yahoo.com');
            //Get.changeTheme(Get.isDarkMode? ThemeData.light(): ThemeData.dark());
         },
         child: const Icon(Icons.add),
       ),
       body: Center(
-        child: Obx(()=> Text(controller.credentials)),
+        child: Column(
+          children: [
+            Obx(()=> Text(controller.credentials)),
+
+            //Using StateMixin
+            controller.obx(
+                  (state)=>Text(state!.age.toString()),
+
+              // here you can put your custom loading indicator, but
+              // by default would be Center(child:CircularProgressIndicator())
+              // onLoading: CustomLoadingIndicator(),
+              onEmpty: Text('No data found'),
+
+              // here also you can set your own error widget, but by
+              // default will be an Center(child:Text(error))
+              onError: (error)=>Text('shit is real'),
+            ),
+          ],
+        ),
       ),
     );
   }
