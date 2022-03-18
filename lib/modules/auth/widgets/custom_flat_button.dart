@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-class CustomFlatButton extends FlatButton {
+class CustomFlatButton extends ElevatedButton {
   final Color color;
   final Color textColor;
   final String title;
@@ -8,21 +8,16 @@ class CustomFlatButton extends FlatButton {
   final IconData icon;
 
   CustomFlatButton(
-      {required this.color,
+      {Key? key, required this.color,
         required this.textColor,
         required this.title,
         required this.onPressed,
         required this.icon,
         required this.radius})
-      : super(
-    disabledColor: Colors.green,
-    color: color,
-    child: icon == null
-        ? Text(
-      title,
-      style: TextStyle(color: textColor),
-    )
-        : Row(
+      : super(key: key,
+    // disabledColor: Colors.green,
+    // color: color,
+    child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
@@ -30,7 +25,7 @@ class CustomFlatButton extends FlatButton {
           color: textColor,
           size: 20.0,
         ),
-        SizedBox(width: 20.0),
+        const SizedBox(width: 20.0),
         Text(
           title,
           style: TextStyle(color: textColor),
@@ -38,9 +33,5 @@ class CustomFlatButton extends FlatButton {
       ],
     ),
     onPressed: onPressed,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(radius ?? 5.0),
-      //side: BorderSide(color: Colors.red)
-    ),
   );
 }

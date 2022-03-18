@@ -1,11 +1,11 @@
-import 'package:cruz/controllers/login_controller.dart';
+import 'package:cruz/modules/auth/controllers/password_reset_controller.dart';
 import 'package:get/get.dart';
 
 //this helps with binding the screen with the controller
-class LoginBinding extends Bindings {
+class PasswordResetBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put<LoginController>(LoginController());
+    Get.put<PasswordResetController>(PasswordResetController());
     //Get.putAsync<String>(() => tell());
     //Get.put<LoginController>(LoginController(), tag: 'loginC', permanent: true);
     // 'tag' makes u to be able to find the controller
@@ -15,7 +15,7 @@ class LoginBinding extends Bindings {
     //Get.create(() => ShopItemController()); //this will be available throughout the app
   }
 
-  // Future<String> tell() async{
-  //   return  'hi';
-  // }
+// Future<String> tell() async{
+//   return  'hi';
+// }
 }

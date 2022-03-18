@@ -1,5 +1,5 @@
-import 'package:cruz/models/dialog.dart';
-import 'package:cruz/models/profile.dart';
+
+import 'package:cruz/modules/auth/models/dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +9,6 @@ class LoginController extends GetxController with StateMixin<Dialog>{
   final _count = 0.obs;
 
   late Dialog dialogState;
-
 
   //RxString('Martins)
   //RxInt(0)
@@ -26,7 +25,7 @@ class LoginController extends GetxController with StateMixin<Dialog>{
 
     super.onInit();
     change(dialogState,status: RxStatus.success());
-    print('this is login controller constructor');
+    debugPrint('this is login controller constructor');
   }
 
 
