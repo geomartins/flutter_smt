@@ -37,3 +37,9 @@ class MyApp extends StatelessWidget {
 
 //Dynamic Urls
 //https://iisprey.medium.com/advanced-navigation-with-getx-in-flutter-95970f6c5afe
+
+
+// Boiler Plate
+// https://github.com/kuzzleio/flutter-boilerplate
+// https://github.com/zubairehman/flutter-boilerplate-project
+// https://github.com/geomartins/flutter_smt
