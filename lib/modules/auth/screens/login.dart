@@ -26,6 +26,14 @@ class Login extends GetView<LoginController> {
         child: FloatingActionButton(
           onPressed: (){
             controller.incrementAge();
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: const Text('snack'),
+              duration: const Duration(seconds: 1),
+              action: SnackBarAction(
+                label: 'ACTION',
+                onPressed: () { },
+              ),
+            ));
             //context.read()<PasswordResetController>().increment();
             //Get.find<Session>().write(key, value)
             //print(dotenv.env['APP_NAME']);
